@@ -33,7 +33,7 @@ class StubServer {
     void waitForFinish() throws MojoExecutionException {
         try {
             client.joinJetty();
-        } catch (InterruptedException e) {
+        } catch (Exception e) {
             throw new MojoExecutionException("Failure", e);
         }
     }
