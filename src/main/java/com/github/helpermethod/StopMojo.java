@@ -10,10 +10,8 @@ public class StopMojo extends AbstractMojo {
     public void execute() throws MojoExecutionException {
         StubServer server = (StubServer) getPluginContext().remove("server");
 
-        if (server == null) {
-            return;
+        if (server != null) {
+            server.stop();
         }
-
-        server.stop();
     }
 }
